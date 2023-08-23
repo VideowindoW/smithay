@@ -865,6 +865,11 @@ impl X11Wm {
         self.id
     }
 
+    /// Get the connection of this X11 WM
+    pub fn connection(&self) -> Arc<RustConnection> {
+        self.conn.clone()
+    }
+
     /// Raises a window in the internal X11 state
     ///
     /// Needs to be called to match raising of windows inside the compositor to keep the stacking order
